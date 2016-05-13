@@ -5,8 +5,9 @@
         </a>
     </div>
     <div class="media-body">
-        <h4 class="media-heading">{{ data.title}} <span class="handle">{{ data.handle }}</span></h4> {{ data.body }}
+        <h4 class="media-heading">{{ data.title }} <span class="handle">{{ data.handle }}</span></h4> 
+        {{ data.body }}
         <div>
-            <like [isLiked]="data.isLiked" [noOfLikes]="data.likes"></like>
+            <like [isLiked]="data.isLiked" [noOfLikes]="data.likes" (liked)="onLike($event, data)"></like>
         </div>
     </div>

@@ -1,7 +1,8 @@
-<h2>Courses</h2> {{title}}
-<input type="text" autoGrow />
+{{ title }}
+<div><input type="text" autoGrow /></div>
 <ul>
     <li *ngFor="#course of courses">
         {{ course }}
     </li>
+    <li *ngIf="courses == undefined">No Courses to be displayed</li>
 </ul>

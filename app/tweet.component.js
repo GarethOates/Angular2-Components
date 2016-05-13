@@ -29,6 +29,11 @@ System.register(['angular2/core', './tweets.service', './like.component'], funct
                     this.tweetsService = tweetsService;
                     this.data = tweetsService.getTweets();
                 }
+                TweetComponent.prototype.onLike = function ($event, data) {
+                    // Normally update server side with new count here.
+                    data.likes = $event.liked ? data.likes + 1 : data.likes - 1;
+                    console.log(data.likes);
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Array)

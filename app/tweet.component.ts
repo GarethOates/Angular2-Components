@@ -17,4 +17,10 @@ export class TweetComponent {
     constructor(private tweetsService: TweetsService) {
         this.data = tweetsService.getTweets();
     }
+    
+    onLike($event, data) {
+        // Normally update server side with new count here.
+        data.likes = $event.liked ? data.likes + 1 : data.likes - 1;
+        console.log(data.likes);
+    }
 }

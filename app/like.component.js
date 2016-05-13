@@ -20,10 +20,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             LikeComponent = (function () {
                 function LikeComponent() {
+                    this.liked = new core_1.EventEmitter();
                 }
                 LikeComponent.prototype.clicked = function () {
                     this.isLiked = !this.isLiked;
                     this.noOfLikes += this.isLiked ? 1 : -1;
+                    this.liked.emit({ "liked": this.isLiked, "noOfLikes": this.noOfLikes });
                 };
                 __decorate([
                     core_1.Input(), 
@@ -33,6 +35,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', Number)
                 ], LikeComponent.prototype, "noOfLikes", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], LikeComponent.prototype, "liked", void 0);
                 LikeComponent = __decorate([
                     core_1.Component({
                         selector: 'like',
