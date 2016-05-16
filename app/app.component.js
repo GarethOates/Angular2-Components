@@ -1,4 +1,4 @@
-System.register(['angular2/core', './tweets.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './accordian.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,15 @@ System.register(['angular2/core', './tweets.component'], function(exports_1, con
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, tweets_component_1;
+    var core_1, accordian_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (tweets_component_1_1) {
-                tweets_component_1 = tweets_component_1_1;
+            function (accordian_component_1_1) {
+                accordian_component_1 = accordian_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -28,7 +28,7 @@ System.register(['angular2/core', './tweets.component'], function(exports_1, con
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: "app/app.component.html",
-                        directives: [tweets_component_1.TweetsComponent]
+                        directives: [accordian_component_1.AccordianComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

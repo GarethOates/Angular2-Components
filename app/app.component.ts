@@ -1,10 +1,10 @@
 import {Component, Output} from 'angular2/core';
-import {TweetsComponent} from './tweets.component'
+import { AccordianComponent } from './accordian.component'
 
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
-    directives: [TweetsComponent]
+    directives: [AccordianComponent]
 })
 export class AppComponent {
 }
