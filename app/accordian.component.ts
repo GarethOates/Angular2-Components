@@ -5,7 +5,7 @@ import { Component, Input } from 'angular2/core'
     template: `
     <div class="panel panel-default">
         <div 
-            class="accordian-title" 
+            class="panel-heading" 
             (click)="toggle()">
       {{ title }}
     <i 
@@ -16,7 +16,7 @@ import { Component, Input } from 'angular2/core'
         }">
     </i>
         </div>
-        <div *ngIf="isExpanded" class="accordian-content">
+        <div *ngIf="isExpanded" class="panel-body">
             <ng-content></ng-content>
         </div>        
     </div>

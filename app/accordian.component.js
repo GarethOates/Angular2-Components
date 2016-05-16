@@ -32,7 +32,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 AccordianComponent = __decorate([
                     core_1.Component({
                         selector: 'accordian',
-                        template: "\n    <div class=\"panel panel-default\">\n        <div \n            class=\"accordian-title\" \n            (click)=\"toggle()\">\n      {{ title }}\n    <i \n        class=\"pull-right glyphicon\"\n        [ngClass]=\"{\n           'glyphicon-chevron-down': !isExpanded,\n           'glyphicon-chevron-up' : isExpanded \n        }\">\n    </i>\n        </div>\n        <div *ngIf=\"isExpanded\" class=\"accordian-content\">\n            <ng-content></ng-content>\n        </div>        \n    </div>\n    "
+                        template: "\n    <div class=\"panel panel-default\">\n        <div \n            class=\"panel-heading\" \n            (click)=\"toggle()\">\n      {{ title }}\n    <i \n        class=\"pull-right glyphicon\"\n        [ngClass]=\"{\n           'glyphicon-chevron-down': !isExpanded,\n           'glyphicon-chevron-up' : isExpanded \n        }\">\n    </i>\n        </div>\n        <div *ngIf=\"isExpanded\" class=\"panel-body\">\n            <ng-content></ng-content>\n        </div>        \n    </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AccordianComponent);
