@@ -1,10 +1,10 @@
-import {Component, Output} from 'angular2/core';
-import { AccordianComponent } from './accordian.component'
+import { Component } from 'angular2/core';
+import { ContactFormComponent } from './contact-form.component'
 
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
-    directives: [AccordianComponent]
+    directives: [ContactFormComponent]
 })
 export class AppComponent {
 }

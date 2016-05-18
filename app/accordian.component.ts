@@ -9,7 +9,7 @@ import { Component, Input } from 'angular2/core'
             (click)="toggle()">
       {{ title }}
     <i 
-        class="pull-right glyphicon"
+        class="pull-right glyphicon heading"
         [ngClass]="{
            'glyphicon-chevron-down': !isExpanded,
            'glyphicon-chevron-up' : isExpanded 
@@ -20,7 +20,8 @@ import { Component, Input } from 'angular2/core'
             <ng-content></ng-content>
         </div>        
     </div>
-    `
+    `,
+    styleUrls: ['app/accordian.component.css']
 })
 export class AccordianComponent {
     @Input() title: string;
