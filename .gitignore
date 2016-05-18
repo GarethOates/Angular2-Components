@@ -44,6 +44,8 @@ dlldata.c
 
 node_modules
 typings
+app/*.js
+app/*.map
 
 # DNX
 project.lock.json
