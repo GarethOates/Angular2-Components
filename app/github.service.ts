@@ -1,10 +1,7 @@
 import { Injectable } from 'angular2/core'
 import { Http } from 'angular2/http'
-import { User } from './User'
-import { Follower } from './Follower'
 
 import { Observable } from 'rxjs/Rx'
-import 'rxjs/add/observable/forkJoin'
 import 'rxjs/add/operator/map'
 
 @Injectable()
@@ -16,16 +13,11 @@ export class GitHubService {
         this.url = "https://api.github.com/users/";
     }
     
-    getAllData(name: string): Observable<any> {
-        return Observable.forkJoin([this.getUserData(name), this.getFollowers(name)])
-        .map(joined => new Object({ users: joined[0], followers: joined[1]}));
-    }
-    
-    getUserData(name: string): Observable<User> {
+    getUserData(name: string) {
         return this._http.get(this.url + name).map(response => response.json());
     }
     
-    getFollowers(name: string): Observable<Follower> {
+    getFollowers(name: string) {
         return this._http.get(this.url + name + "/followers").map(response => response.json());
     }
     

@@ -1,8 +1,7 @@
 import { Component, OnInit } from 'angular2/core'
 import { GitHubService } from './github.service'
 import { HTTP_PROVIDERS } from 'angular2/http'
-import { User } from './User'
-import { Follower } from './Follower'
+import { Observable } from 'rxjs/Rx'
 
 @Component({
     selector: 'gitHub',
@@ -13,17 +12,22 @@ import { Follower } from './Follower'
 export class GitHubComponent implements OnInit {
     
     isLoading: boolean = true;
-    User: User;
-    Followers: Follower[];
+    User;
+    Followers;
+    
+    username = "Octocat";
     
     constructor(private gitHubService: GitHubService) { }
     
-    ngOnInit() {
-        this.gitHubService.getAllData("Octocat").subscribe(response => {
-            console.log(response);
-            this.User = response.users;
-            this.Followers = response.followers;
-            this.isLoading = false;
-        });
+    ngOnInit() {       
+        Observable.forkJoin(
+            this.gitHubService.getUserData(this.username),
+            this.gitHubService.getFollowers(this.username)
+        ).subscribe(
+            res => {
+                this.User = res[0];
+                this.Followers = res[1];
+            }, null, () => { this.isLoading = false }
+        );
     }
 }

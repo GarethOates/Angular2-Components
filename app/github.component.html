@@ -2,15 +2,10 @@
 
 <div *ngIf="!isLoading">
 
-    <div class="h4">@{{ User.login }}</div>
+    <div class="h2">@{{ User.login }}</div>
+    <img class="avatar" src="{{ User.avatar_url }}" alt="{{ User.login }}">
 
-    <div class="media-left">
-        <a href="#">
-            <img class="avatar" src="{{ User.avatar_url }}" alt="{{ User.login }}">
-        </a>
-    </div>
-
-    <div class="h4">Followers</div>
+    <div class="h3">Followers</div>
     <div *ngFor="#Follower of Followers">
         <div class="media">
             <div class="media-left">
