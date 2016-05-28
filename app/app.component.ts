@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import {GitHubComponent} from './github.component'
+import { GitHubComponent } from './github.component'
 
 @Component({
     selector: 'my-app',
@@ -7,4 +7,5 @@ import {GitHubComponent} from './github.component'
     directives: [GitHubComponent]
 })
 export class AppComponent {
+    
 }

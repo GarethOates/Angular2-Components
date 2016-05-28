@@ -1,0 +1,26 @@
+<div *ngIf="isLoading"><i class="fa fa-spinner fa-spin fa-2x"></i> Loading Data From GitHub...</div>
+
+<div *ngIf="!isLoading">
+
+    <div class="h4">@{{ User.login }}</div>
+
+    <div class="media-left">
+        <a href="#">
+            <img class="avatar" src="{{ User.avatar_url }}" alt="{{ User.login }}">
+        </a>
+    </div>
+
+    <div class="h4">Followers</div>
+    <div *ngFor="#Follower of Followers">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="avatar" src="{{ Follower.avatar_url }}" alt="{{ Follower.login }}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{ Follower.login }}</h4>
+            </div>
+        </div>
+    </div>
+</div>
