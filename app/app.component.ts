@@ -3,7 +3,8 @@ import {GitHubComponent} from './github.component'
 
 @Component({
     selector: 'my-app',
-    templateUrl: "app/app.component.html"
+    templateUrl: "app/app.component.html",
+    directives: [GitHubComponent]
 })
 export class AppComponent {
 }
